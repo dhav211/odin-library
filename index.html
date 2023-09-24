@@ -15,21 +15,27 @@
     <div id="add-book-area">
       <h2>Add New Book</h2>
       <form id="add-book-form">
-        <label for="bname">Name:</label>
-        <input type="text" id="bname" name="bname" />
-        <label for="bauthor">Author:</label>
-        <input type="text" id="bauthor" name="bauthor" />
-        <label for="bpages">Pages:</label>
-        <input type="text" id="bpages" name="bpages" />
-        <label for="read">Read</label>
-        <input type="radio" id="read" name="is-read" />
-        <label for="not-read">Not Read</label>
-        <input type="radio" id="not-read" name="is-read" />
+        <div class="stacked-input">
+          <label for="bname">Name:</label>
+          <input type="text" id="bname" name="bname" />
+        </div>
+        <div class="stacked-input">
+          <label for="bauthor">Author:</label>
+          <input type="text" id="bauthor" name="bauthor" />
+        </div>
+        <div class="stacked-input">
+          <label for="bpages">Pages:</label>
+          <input type="text" id="bpages" name="bpages" />
+        </div>
+        <div id="read-radios">
+          <label for="read">Read</label>
+          <input type="radio" id="read" name="is-read" />
+          <label for="not-read">Not Read</label>
+          <input type="radio" id="not-read" name="is-read" />
+        </div>
         <button id="submit-btn">Add</button>
       </form>
     </div>
-    <main>
-      <div class="card">hey</div>
-    </main>
+    <main></main>
   </body>
 </html>

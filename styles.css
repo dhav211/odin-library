@@ -33,15 +33,75 @@ header img {
 #add-book-area {
     background-color: #9EDDFF;
     padding: 16px 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#add-book-area h2 {
+    text-align: center;
+}
+
+#add-book-area form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.stacked-input {
+    display: flex;
+    flex-direction: column;
+}
+
+#read-radios {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
 }
 
 main {
     background-color: #f0f6f0;
     height: 100%;
+    padding: 16px 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 350px);
+    grid-auto-rows: 200px;
+    row-gap: 16px;
+    column-gap: 16px;
+    justify-content: center;
 }
 
 .card {
+    box-sizing: border-box;
+    margin: 0px 0px;
+    padding: 0px 8px;
     background-color: #BEFFF7;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     width: 350px;
     height: 200px;
+    border-radius: 16px;
+    box-shadow: 2px 2px 5px rgb(128, 128, 128);
+    display: flex;
+    flex-direction: column;
+}
+
+.card h3 {
+    margin-top: -16px;
+    font-style: italic;
+}
+
+.card > .remove-button-area {
+    display: flex;
+    height: 100%;
+    padding-bottom: 8px;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.page-read-row {
+    display: flex;
+    gap: 16px;
+}
+
+.pages {
+    font-style: italic;
 }
