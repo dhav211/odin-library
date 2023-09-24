@@ -48,8 +48,9 @@ function addBook() {
 
     bookCard.append(pageReadRow);
 
-    const removeButtonArea = document.createElement('div');
-    removeButtonArea.classList.add('remove-button-area');
+    const cardButtonArea = document.createElement('div');
+    cardButtonArea.classList.add('button-area');
+
     const removeBookButton = document.createElement('button');
     removeBookButton.addEventListener('click', (event) => {
         bookCard.remove();
@@ -58,9 +59,17 @@ function addBook() {
         event.preventDefault();
     });
     removeBookButton.textContent = "Remove";
-    removeButtonArea.append(removeBookButton);
-    bookCard.append(removeButtonArea);
-
+    cardButtonArea.append(removeBookButton);
+    
+    const readBookButton = document.createElement('button');
+    readBookButton.addEventListener('click', (event) => {
+        book.isRead = true;
+        bookRead.textContent = "Read";
+    })
+    readBookButton.textContent = "Read";
+    cardButtonArea.append(readBookButton);
+    
+    bookCard.append(cardButtonArea);
 
     mainArea.append(bookCard);
 }

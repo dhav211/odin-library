@@ -89,9 +89,10 @@ main {
     font-style: italic;
 }
 
-.card > .remove-button-area {
+.card > .button-area {
     display: flex;
     height: 100%;
+    gap: 8px;
     padding-bottom: 8px;
     justify-content: center;
     align-items: flex-end;
