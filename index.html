@@ -15,23 +15,31 @@
     <div id="add-book-area">
       <h2>Add New Book</h2>
       <form id="add-book-form">
-        <div class="stacked-input">
+        <div class="stacked-input" id="name-field">
           <label for="bname">Name:</label>
           <input type="text" id="bname" name="bname" />
+          <p class="input-error" id="name-field-error">You forgot the name!</p>
         </div>
         <div class="stacked-input">
           <label for="bauthor">Author:</label>
           <input type="text" id="bauthor" name="bauthor" />
+          <p class="input-error" id="author-field-error">
+            Didn't have an author?
+          </p>
         </div>
         <div class="stacked-input">
           <label for="bpages">Pages:</label>
           <input type="text" id="bpages" name="bpages" />
+          <p class="input-error" id="pages-field-error">
+            A book with no pages?
+          </p>
         </div>
         <div id="read-radios">
           <label for="read">Read</label>
           <input type="radio" id="read" name="is-read" />
           <label for="not-read">Not Read</label>
           <input type="radio" id="not-read" name="is-read" />
+          <p class="input-error" id="read-field-error">Huh?</p>
         </div>
         <button id="submit-btn">Add</button>
       </form>

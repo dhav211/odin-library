@@ -30,6 +30,18 @@ header img {
     height: 200px;
 }
 
+button {
+    height: 3em;
+    width: 64px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 1px 3px 2px grey;
+}
+
+button:hover {
+    box-shadow: 1px 1px 2px grey;
+}
+
 #add-book-area {
     background-color: #9EDDFF;
     padding: 16px 16px;
@@ -52,10 +64,21 @@ header img {
     flex-direction: column;
 }
 
+.input-error {
+    color: red;
+    margin-top: 0px;
+    display: none;
+}
+
 #read-radios {
     display: grid;
     grid-template-columns: auto auto;
+    grid-template-rows: 1.5em 1.5em;
     align-items: center;
+}
+
+.stacked-input, #read-radios {
+    height: 4rem;
 }
 
 main {

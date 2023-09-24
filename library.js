@@ -4,8 +4,10 @@ const mainArea = document.getElementsByTagName("main")[0];
 let books = [];
 
 submitButton.addEventListener("click", (event) => {
-    addBook();
-    addBookForm.reset();
+    if (validateForms()) {
+        addBook();
+        resetForms();
+    } 
     event.preventDefault();
 });
 
@@ -15,6 +17,74 @@ function Book(name, author, pages, isRead) {
     this.pages = pages;
     this.isRead = isRead;
     this.html = ""
+}
+
+function validateForms() {
+    let areCorrect = true;
+    const bookName = document.getElementById("bname");
+    const bookNameError = document.getElementById("name-field-error");
+    const authorName = document.getElementById("bauthor");
+    const authorNameError = document.getElementById("author-field-error")
+    const bookPages = document.getElementById("bpages");
+    const bookPagesError = document.getElementById("pages-field-error");
+    const readRadio = document.getElementById("read");
+    const notReadRadio = document.getElementById("not-read");
+    const readButtonsError = document.getElementById("read-field-error");
+
+    if (bookName.value.length == 0) {
+        areCorrect = false;
+        bookNameError.style.display = "block";
+    } else {
+        bookNameError.style.display = "none";
+    }
+
+    if (authorName.value.length == 0) {
+        areCorrect = false;
+        authorNameError.style.display = "block";
+    } else {
+        authorNameError.style.display = "none";
+    }
+
+    if (bookPages.value.length == 0) {
+        areCorrect = false;
+        bookPagesError.style.display = "block";
+        bookPagesError.textContent = "An empty book?";
+    } else {
+        let doesPagesContainsALetter = false;
+        for (let i in bookPages.value) {
+            const char = bookPages.value[i];
+            if (char < '0' || char > '9') {
+                doesPagesContainsALetter = true;
+            }
+        }
+    
+        if (doesPagesContainsALetter) {
+            areCorrect = false;
+            bookPagesError.style.display = "block";
+            bookPagesError.textContent = "Only numbers!";
+        } else {
+            bookPagesError.style.display = "none";
+        }
+    }
+
+    if (!readRadio.checked && !notReadRadio.checked) {
+        areCorrect = false;
+        readButtonsError.style.display = "block";
+    } else if (readRadio.checked || notReadRadio.checked) {
+        bookPagesError.style.display = "none";
+    }
+
+
+    return areCorrect;
+}
+
+function resetForms() {
+    addBookForm.reset();
+ 
+    document.getElementById("name-field-error").style.display = "none";
+    document.getElementById("author-field-error").style.display = "none";
+    document.getElementById("pages-field-error").style.display = "none";
+    document.getElementById("read-field-error").style.display = "none";
 }
 
 function addBook() {
