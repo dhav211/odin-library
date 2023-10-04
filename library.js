@@ -11,12 +11,14 @@ submitButton.addEventListener("click", (event) => {
     event.preventDefault();
 });
 
-function Book(name, author, pages, isRead) {
-    this.name = name;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = isRead;
-    this.html = ""
+class Book {
+    constructor(name, author, pages, isRead) {
+        this.name = name;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+        this.html = ""
+    }
 }
 
 function validateForms() {
